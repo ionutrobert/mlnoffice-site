@@ -1,0 +1,66 @@
+.container {
+    display:flex;
+    gap: 100px;
+}
+
+.textContainer {
+    flex:1.3;
+    display:flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.heading {
+    font-size: 50px;
+    font-weight: 800;
+}
+.description {
+    font-size: 20px;
+    font-weight: 400;
+}   
+
+.buttonContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    min-width:120px;
+    background-color: var(--text);
+    border-radius: 5px;
+    border: none;
+    color: var(--bg);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:first-child {
+    background-color: var(--btn);
+    color: var(--text);
+}
+
+.imageContainer{
+    flex: 0.7;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heroImg {
+    display: block;
+    position: relative;
+    margin: auto;
+    object-fit:contain;
+    max-width: 227px;
+    height: 311px;
+}
+
+.brands {
+    width: 500px;
+    height: 50px;
+    position: relative;
+    filter: grayscale(100%);
+    opacity: 0.8;
+}

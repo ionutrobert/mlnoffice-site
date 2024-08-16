@@ -1,0 +1,47 @@
+.links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.mobileLinks,
+.menuButton {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+
+    .mobileLinks {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 50%;
+        height: calc(100vh - 100px);
+        background-color: rebeccapurple;
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .menuButton {
+        display: block;
+        cursor: pointer;
+
+    }
+}

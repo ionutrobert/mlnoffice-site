@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.imageContainer {
+    flex: 1;
+    position: relative;
+    height: 500px;
+
+}
+
+.heroImg {
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.formContainer {
+    flex: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input,
+.form textarea {
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--btn);
+    outline: none;
+    background-color: var(--bgSoft);
+    color: var(--text);
+}
+.form input::placeholder {
+    color: rgb(255, 255, 255);
+  }
+  
+  .heading {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+.form button {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--btn);
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+}

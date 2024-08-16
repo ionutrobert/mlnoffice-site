@@ -1,0 +1,93 @@
+.container {
+
+    color: #fff;
+  }
+  
+  .hero {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .heroImage {
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.774);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .content {
+    padding: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mission {
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mission, .services {
+    margin-bottom: 4rem;
+  }
+  
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .serviceItem {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+  
+  .serviceItem h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .serviceItem p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    justify-content: center;
+    text-align: justify;
+  }
+  
