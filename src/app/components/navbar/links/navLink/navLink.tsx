@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./navLink.module.css";
 import { usePathname } from "next/navigation";
 
-const NavLink = ({ item }) => {
+const NavLink = ({ item }: {item: any}) => {
 
     const pathName = usePathname();
     return (
