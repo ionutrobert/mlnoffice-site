@@ -1,41 +1,53 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css";
+import PostUser from "@/app/components/postUser/postUser";
+import { Suspense } from "react";
+import { getPost } from "@/app/lib/data";
 
-const SinglePostPage = () => {
+// FETCH DATA WITH AN API
+// const getData = async (slug : any) => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`, {cache: 'no-store'})
+
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
+
+//   return res.json()
+// }
+
+const SinglePostPage = async ({ params }: any) => {
+  const { slug } = params;
+  // const post = await getData(slug);
+
+  const post = await getPost(slug);
+
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
+      {post.img && <div className={styles.imgContainer}>
         <Image
-          src="/images/post/1.jpg"
-          alt="Post Image"
+          src={post?.img}          
+          alt={post?.title}
           fill
           className={styles.postImg}
         />
-      </div>
+      </div>}
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Title</h1>
+        <h1 className={styles.title}>{post?.title}</h1>
         <div className={styles.detail}>
-          <Image
-            src="/images/author/1.png"
-            alt="Author: J92"
-            width ={50}
-            height ={50}
-            className={styles.avatar}
-          />
-          <div className={styles.detailText}>
-            <span className={styles.detailTitle}>Author</span>
-            <span className={styles.detailValue}>J92</span>
-          </div>
+          
+          {post && (
+            <Suspense fallback={<div>Loading...</div>}>
+              <PostUser userId={post.userId} />
+            </Suspense>
+          )}
+
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
-            <span className={styles.detailValue}>01.01.2024</span>
+            <span className={styles.detailValue}>{post?.createdAt.toString().slice(4,16)}</span>
           </div>
         </div>
 
-        <div className={styles.content}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quo nulla voluptatum dicta totam, perspiciatis vitae perferendis quod nemo error iste unde repellat aliquam at reiciendis necessitatibus. Ratione, nulla earum!
-        </div>
-
+        <div className={styles.content}>{post?.description}</div>
       </div>
     </div>
   );
