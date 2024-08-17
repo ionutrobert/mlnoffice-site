@@ -91,3 +91,13 @@
     text-align: justify;
   }
   
+  @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .services {
+      flex-direction: column;
+      gap: 30px;
+      
+    }
+    }

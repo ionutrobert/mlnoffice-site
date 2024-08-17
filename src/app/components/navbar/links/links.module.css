@@ -19,7 +19,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
     .links {
         display: none;
     }
@@ -30,7 +30,8 @@
         right: 0;
         width: 50%;
         height: calc(100vh - 100px);
-        background-color: rebeccapurple;
+        /* background-color: rebeccapurple; */
+        background-color: var(--bg);
         border-radius: 5px;
         padding: 10px;
         display: flex;
