@@ -36,24 +36,24 @@ const apiUrl = process.env.NEXT_PUBLIC_URL
 console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
 console.log('apiUrl variable',apiUrl)
 
-const getData = async () => {
-  const res = await fetch(`${apiUrl}/api/blog`)
+// const getData = async () => {
+//   const res = await fetch(`${apiUrl}/api/blog`)
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  const data = await res.json();
-  return data;  
-}
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
+//   const data = await res.json();
+//   return data;  
+// }
 const BlogPage = async () => {
 
   // FETCH DATA WITH AN API
-   const data = await getData();
-   const { posts } = data;
+  //  const data = await getData();
+  //  const { posts } = data;
    //console.log(posts);
 
   // FETCH DATA WITH A DATABASE
-  // const posts = await getPosts();
+   const posts = await getPosts();
   
     return (
     <div
