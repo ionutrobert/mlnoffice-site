@@ -29,8 +29,11 @@ export const metadata: Metadata = {
 };
 
 // FETCH DATA WITH AN API
+const apiUrl = process.env.URL 
+? `https://${process.env.URL}` 
+: 'http://localhost:3000';
 const getData = async () => {
-  const res = await fetch(`${process.env.URL}/api/blog`, {next: {revalidate: 3600}})
+  const res = await fetch(`${apiUrl}/api/blog`, {next: {revalidate: 3600}})
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
