@@ -50,7 +50,7 @@ const BlogPage = async () => {
   // FETCH DATA WITH AN API
    const data = await getData();
    const { posts } = data;
-   console.log(posts);
+   //console.log(posts);
 
   // FETCH DATA WITH A DATABASE
   // const posts = await getPosts();
