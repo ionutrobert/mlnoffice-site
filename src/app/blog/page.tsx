@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 // FETCH DATA WITH AN API
-const apiUrl = process.env.URL || 'http://localhost:3000';
+const apiUrl = process.env.URL;
 const getData = async () => {
   const res = await fetch(`${apiUrl}/api/blog`, {next: {revalidate: 3600}})
 
