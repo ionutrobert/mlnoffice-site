@@ -37,7 +37,7 @@ console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
 console.log('apiUrl variable',apiUrl)
 
 const getData = async () => {
-  const res = await fetch(`${apiUrl}/api/blog`, {next: {revalidate: 3600}})
+  const res = await fetch(`${apiUrl}/api/blog`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
