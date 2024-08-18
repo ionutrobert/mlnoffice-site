@@ -32,6 +32,9 @@ export const metadata: Metadata = {
 const apiUrl = process.env.URL 
 ? `https://${process.env.URL}` 
 : 'http://localhost:3000';
+
+console.log('API URL during build:', process.env.URL);
+console.log('apiUrl variable',apiUrl)
 const getData = async () => {
   const res = await fetch(`${apiUrl}/api/blog`, {next: {revalidate: 3600}})
 

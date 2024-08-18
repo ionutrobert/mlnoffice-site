@@ -9,6 +9,9 @@ import { Metadata } from 'next';
 const apiUrl = process.env.URL 
 ? `https://${process.env.URL}` 
 : 'http://localhost:3000';
+
+console.log('API URL during build:', process.env.URL);
+console.log(apiUrl)
 const getData = async (slug : any) => {
   const res = await fetch(`${apiUrl}/api/blog/${slug}`)
   
