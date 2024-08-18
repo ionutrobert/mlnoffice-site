@@ -6,11 +6,11 @@ import { getPost } from "@/app/lib/data";
 import { Metadata } from 'next';
 
 //Fetch data with an API
-const apiUrl = process.env.URL 
-? `https://${process.env.URL}` 
+const apiUrl = process.env.NEXT_PUBLIC_URL 
+? `https://${process.env.NEXT_PUBLIC_URL}` 
 : 'http://localhost:3000';
 
-console.log('API URL during build:', process.env.URL);
+console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
 console.log(apiUrl)
 
 const getData = async (slug : any) => {
