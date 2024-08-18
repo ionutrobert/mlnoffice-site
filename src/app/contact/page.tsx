@@ -1,7 +1,31 @@
 
 import Image from "next/image";
 import styles from "./contact.module.css";
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Contact MLN Office - Get in Touch",
+  description: "Contact MLN Office for availability and professional web development services.",
+  openGraph: {
+    title: "Contact MLN Office - Get in Touch",
+    description: "Contact MLN Office for availability and professional web development services.",
+    url: "https://mlnoffice.com/contact",
+    images: [
+      {
+        url: "/images/mlnoffice_cover.webp",
+        width: 800,
+        height: 600,
+        alt: "Contact MLN Office Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact MLN Office - Get in Touch",
+    description: "Contact MLN Office for availability and professional web development services.",
+    images: ["/images/mlnoffice_cover.webp"],
+  },
+};
 
 
 const ContactPage = () => {

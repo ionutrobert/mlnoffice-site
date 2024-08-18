@@ -1,5 +1,30 @@
 import Image from "next/image";
 import styles from "./about.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About MLN Office - Professional Web Development",
+  description: "Learn more about MLN Office, a full stack web developer with over a decade of experience.",
+  openGraph: {
+    title: "About MLN Office - Professional Web Development",
+    description: "Learn more about MLN Office, a full stack web developer with over a decade of experience.",
+    url: "https://mlnoffice.com/about",
+    images: [
+      {
+        url: "/images/mlnoffice_cover.webp",
+        width: 800,
+        height: 600,
+        alt: "About MLN Office Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About MLN Office - Professional Web Development",
+    description: "Learn more about MLN Office, a full stack web developer with over a decade of experience.",
+    images: ["/images/mlnoffice_cover.webp"],
+  },
+};
 
 const AboutPage = () => {
   return (
