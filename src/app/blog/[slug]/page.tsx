@@ -5,6 +5,17 @@ import { Suspense } from "react";
 import { getPost } from "@/app/lib/data";
 import { Metadata } from 'next';
 
+//Fetch data with an API
+const getData = async (slug : any) => {
+  const res = await fetch(`${process.env.URL}/api/blog/${slug}`)
+  
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  const data = await res.json();
+  return data;
+}
+
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { slug } = params;
   const post = await getPost(slug);
@@ -36,6 +47,11 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 
 const SinglePostPage = async ({ params }: any) => {
   const { slug } = params;
+
+  // FETCH DATA WITH A DATABASE
+  // const post = await getPost(slug);
+
+  // FETCH DATA WITH AN API
   const post = await getPost(slug);
 
   return (

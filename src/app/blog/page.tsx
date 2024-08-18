@@ -29,30 +29,37 @@ export const metadata: Metadata = {
 };
 
 // FETCH DATA WITH AN API
-// const getData = async () => {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {cache: 'no-store'})
+const getData = async () => {
+  const res = await fetch(`${process.env.URL}/api/blog`, {next: {revalidate: 3600}})
 
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch data')
-//   }
-
-//   return res.json()
-// }
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  const data = await res.json();
+  return data;  
+}
 const BlogPage = async () => {
 
-  // const posts = await getData();
+  // FETCH DATA WITH AN API
+   const data = await getData();
+   const { posts } = data;
+   console.log(posts);
 
-  const posts = await getPosts();
+  // FETCH DATA WITH A DATABASE
+  // const posts = await getPosts();
   
     return (
     <div
     className={styles.container}>
-
-      {posts.map((post:any) => (
+  {Array.isArray(posts) ? (
+      posts.map((post: any) => (
         <div key={post.id} className={styles.post}>
           <PostCard post={post} />
         </div>
-      ))}
+      ))
+    ) : (
+      <p>No posts available</p> // Fallback if posts is not an array
+    )}
 
  
       
