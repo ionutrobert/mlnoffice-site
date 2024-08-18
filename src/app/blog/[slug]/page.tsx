@@ -6,7 +6,7 @@ import { getPost } from "@/app/lib/data";
 import { Metadata } from 'next';
 
 //Fetch data with an API
-const apiUrl = process.env.URL;
+const apiUrl = process.env.URL || 'http://localhost:3000';
 const getData = async (slug : any) => {
   const res = await fetch(`${apiUrl}/api/blog/${slug}`)
   
