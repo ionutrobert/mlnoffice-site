@@ -7,8 +7,6 @@ export const GET = async (request) => {
 
     connectToDb();
     const posts = await Post.find();
-    console.log("Post model:", Post);
-    console.log("Fetched posts:", posts);
     return NextResponse.json({ posts });
 
   } catch (error) {
