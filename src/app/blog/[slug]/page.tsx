@@ -12,7 +12,10 @@ const apiUrl = process.env.URL
 
 console.log('API URL during build:', process.env.URL);
 console.log(apiUrl)
+
 const getData = async (slug : any) => {
+  console.log('API URL being used:', `${apiUrl}/api/blog/${slug}`);
+  
   const res = await fetch(`${apiUrl}/api/blog/${slug}`)
   
   if (!res.ok) {

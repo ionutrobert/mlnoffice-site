@@ -35,6 +35,7 @@ const apiUrl = process.env.URL
 
 console.log('API URL during build:', process.env.URL);
 console.log('apiUrl variable',apiUrl)
+
 const getData = async () => {
   const res = await fetch(`${apiUrl}/api/blog`, {next: {revalidate: 3600}})
 
@@ -59,7 +60,7 @@ const BlogPage = async () => {
     className={styles.container}>
   {Array.isArray(posts) ? (
       posts.map((post: any) => (
-        <div key={post.id} className={styles.post}>
+        <div key={post._id} className={styles.post}>
           <PostCard post={post} />
         </div>
       ))
