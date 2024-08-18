@@ -1,7 +1,18 @@
+import { signIn } from "@/app/lib/auth"; 
+
 const LoginPage = () => {
-    return (
-    <div>LoginPage</div>
-    )
+  const handleGithubLogin = async () => {
+    "use server";
+    
+    await signIn("github");
   };
-  
-  export default LoginPage;
+  return (
+    <div>
+      <form action={handleGithubLogin}>
+        <button>Login with Github</button>
+      </form>
+    </div>
+  );
+};
+
+export default LoginPage;
