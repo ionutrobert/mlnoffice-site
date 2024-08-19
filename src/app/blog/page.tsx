@@ -29,12 +29,12 @@ export const metadata: Metadata = {
 };
 
 // FETCH DATA WITH AN API
-const apiUrl = process.env.NEXT_PUBLIC_URL 
-? `https://${process.env.NEXT_PUBLIC_URL}` 
-: 'http://localhost:3000';
+// const apiUrl = process.env.NEXT_PUBLIC_URL 
+// ? `https://${process.env.NEXT_PUBLIC_URL}` 
+// : 'http://localhost:3000';
 
-console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
-console.log('apiUrl variable',apiUrl)
+// console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
+// console.log('apiUrl variable',apiUrl)
 
 // const getData = async () => {
 //   const res = await fetch(`${apiUrl}/api/blog`)

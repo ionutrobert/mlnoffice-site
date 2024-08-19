@@ -6,24 +6,24 @@ import { getPost } from "@/lib/data";
 import { Metadata } from 'next';
 
 //Fetch data with an API
-const apiUrl = process.env.NEXT_PUBLIC_URL 
-? `https://${process.env.NEXT_PUBLIC_URL}` 
-: 'http://localhost:3000';
+// const apiUrl = process.env.NEXT_PUBLIC_URL 
+// ? `https://${process.env.NEXT_PUBLIC_URL}` 
+// : 'http://localhost:3000';
 
-console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
-console.log(apiUrl)
+// console.log('API URL during build:', process.env.NEXT_PUBLIC_URL);
+// console.log(apiUrl)
 
-const getData = async (slug : any) => {
-  console.log('API URL being used:', `${apiUrl}/api/blog/${slug}`);
+// const getData = async (slug : any) => {
+//   console.log('API URL being used:', `${apiUrl}/api/blog/${slug}`);
   
-  const res = await fetch(`${apiUrl}/api/blog/${slug}`)
+//   const res = await fetch(`${apiUrl}/api/blog/${slug}`)
   
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  const data = await res.json();
-  return data;
-}
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
+//   const data = await res.json();
+//   return data;
+// }
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { slug } = params;
