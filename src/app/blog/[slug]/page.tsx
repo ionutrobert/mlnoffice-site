@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/app/components/postUser/postUser";
 import { Suspense } from "react";
-import { getPost } from "@/app/lib/data";
+import { getPost } from "@/lib/data";
 import { Metadata } from 'next';
 
 //Fetch data with an API

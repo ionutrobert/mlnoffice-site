@@ -4,6 +4,8 @@ import { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 import Image from "next/image";
+import { handleLogout } from "@/lib/action";
+
 
 const links = [
   { title: "Home", path: "/" },
@@ -12,11 +14,11 @@ const links = [
   { title: "Blog", path: "/blog" },
 ];
 
-const Links = () => {
+const Links = ({ session } : any) => {
   const [open, setOpen] = useState(false);
   // Temporary session and admin state
-  const session = true;
-  const isAdmin = true;
+
+  // const isAdmin = true;
 
   const handleCloseMobileMenu = () => {
     setOpen(false); // Close the mobile menu
@@ -28,15 +30,17 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} onClick={handleCloseMobileMenu} />
         ))}
-        {session ? (
+        {session?.user ? (
           <>
-            {isAdmin && (
+            {session.user?.isAdmin && 
               <NavLink
                 item={{ title: "Admin", path: "/admin" }}
                 onClick={handleCloseMobileMenu}
               />
-            )}
+            }
+            <form action={handleLogout}>
             <button className={styles.logout}>Logout</button>
+            </form>
           </>
         ) : (
           <NavLink

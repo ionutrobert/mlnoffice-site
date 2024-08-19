@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 500px;
+    background-color: var(--bgSoft);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    border-radius: 5px;
+}
+
+.buttonGithub {
+    padding: 20px;
+    cursor: pointer;
+    background-color: var(--btn);
+    color: var(--textColor);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    align-items: center; /* Aligns icon and text vertically */
+    justify-content: center; /* Centers icon and text */
+  }
+  
+  .githubIcon {
+    margin-right: 8px; /* Space between icon and text */
+  }
+  
